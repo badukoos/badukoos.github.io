@@ -1,0 +1,168 @@
+body {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    font-family: 'monospace';
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+.terminal {
+    width: 100%;
+    height: 100vh;
+    background-color: #0a0a0a;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none; /* Remove shadow when fullscreen */
+    border-radius: 0; /* Remove rounded corners */
+}
+
+.terminal-header {
+    background-color: #333;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    border-radius: 0;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.close { background-color: #ff5f56; }
+.minimize { background-color: #ffbd2e; }
+.maximize { background-color: #27c93f; }
+
+.terminal-title {
+    margin-left: 15px;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+.terminal-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+    min-height: 0; /* Fix for Firefox */
+}
+
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #0a0a0a;
+    border-top: 1px solid #333;
+}
+
+.prompt {
+    color: #4af626;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.command-input {
+    background: transparent;
+    border: none;
+    color: #f0f0f0;
+    font-family: monospace;
+    font-size: 1rem;
+    flex-grow: 1;
+    outline: none;
+    caret-color: #f0f0f0;
+    width: 100%; /* Full width of available space */
+}
+
+.command-input::after {
+    content: '|';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.command {
+    color: #4af626;
+    font-weight: bold;
+}
+
+.error {
+    color: #ff5555;
+}
+
+.success {
+    color: #4af626;
+}
+
+.output-line {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.command-line {
+    margin-bottom: 8px;
+}
+
+.history-item {
+    color: #aaaaaa;
+    margin-left: 20px;
+}
+
+.config-notice {
+    color: #4d9eff;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.success {
+    color: #4af626;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+}
+
+.config-notice {
+    color: #4d9eff;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.output-line strong {
+    color: #f0f0f0;
+    display: block;
+    margin: 10px 0 5px 0;
+}
+
+.output-line {
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+@media (max-width: 1000px) {
+    .terminal {
+        width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+        padding: 10px;
+    }
+
+    .terminal-header {
+        border-radius: 0;
+    }
+
+    body {
+        padding: 0;
+    }
+}
