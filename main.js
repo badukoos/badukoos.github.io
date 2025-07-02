@@ -73,6 +73,12 @@ document.addEventListener('DOMContentLoaded', async function() {
             console.log("Processing command:", command);
             console.log("Current config:", config);
 
+            const parts = command.split(' ');
+            const cmd = parts[0].toLowerCase();
+            const args = parts.slice(1);
+        
+            if (!cmd.trim()) return;
+
             if (config.autoClear) {
                 const children = terminalContent.children;
                 while (children.length > 2) {
@@ -81,12 +87,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
 
             terminal.addOutput(`badukoos@fedora:$ ${command}`, 'command');
-
-            const parts = command.split(' ');
-            const cmd = parts[0].toLowerCase();
-            const args = parts.slice(1);
-
-            if (cmd === '') return;
 
             if (commandRegistry[cmd]) {
                 console.log(`Executing command: ${cmd}`);
