@@ -47,7 +47,7 @@ export default {
                 color: #b0bec5;
                 font-style: italic;
             ">
-                Type any command to execute it
+                Type any command and ↩ to execute it
             </div>
         `, 'html');
     },

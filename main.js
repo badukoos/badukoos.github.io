@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         // Initial message
         terminal.addOutput("Welcome to my terminal portfolio!", 'output');
-        terminal.addOutput("Type 'help' to see available commands.", 'output');
+        terminal.addOutput("Type 'help' and ↩ to see available commands.", 'output');
 
         commandInput.addEventListener('keydown', function(e) {
             if (e.key === 'Enter') {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             const parts = command.split(' ');
             const cmd = parts[0].toLowerCase();
             const args = parts.slice(1);
-        
+
             if (!cmd.trim()) return;
 
             if (config.autoClear) {
