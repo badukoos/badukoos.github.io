@@ -21,6 +21,7 @@ const commandRegistry = {
                     ">
                         <div style="
                             font-size: 1.1em;
+                            font-weight: bold;
                             color: #4fc3f7;
                             margin-bottom: 0.8em;
                             display: flex;
@@ -60,27 +61,81 @@ const commandRegistry = {
             } else {
                 terminal.addOutput(`
                     <div style="
-                        font-size: 1.2em;
-                        font-weight: bold;
-                        color: #4fc3f7;
-                        margin-bottom: 0.5em;
+                        background: rgba(30, 30, 30, 0.5);
+                        border-radius: 8px;
+                        padding: 1.2em;
+                        margin-bottom: 1em;
+                        border-left: 4px solid #4fc3f7;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                        position: relative;
+                        overflow: hidden;
                     ">
-                        Command History
-                    </div>
-                `, 'html');
+                        <div style="
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            width: 100px;
+                            height: 100px;
+                            background: radial-gradient(circle, rgba(79,195,247,0.1) 0%, transparent 70%);
+                            z-index: 0;
+                        "></div>
 
-                commandHistory.forEach((cmd, idx) => {
-                    terminal.addOutput(`${idx + 1}. ${cmd}`, 'output');
-                });
+                        <div style="
+                            position: relative;
+                            z-index: 1;
+                        ">
+                            <div style="
+                                font-size: 1.1em;
+                                font-weight: bold;
+                                color: #4fc3f7;
+                                margin-bottom: 0.8em;
+                                display: flex;
+                                align-items: center;
+                            ">
+                                <span style="
+                                    display: inline-block;
+                                    width: 12px;
+                                    height: 12px;
+                                    background: #4fc3f7;
+                                    border-radius: 50%;
+                                    margin-right: 10px;
+                                "></span>
+                                Command History
+                            </div>
 
-                terminal.addOutput(`
-                    <div style="
-                        margin-top: 0.5em;
-                        font-size: 0.9em;
-                        color: #607d8b;
-                        font-style: italic;
-                    ">
-                        ${commandHistory.length} commands in history
+                            <div style="
+                                max-height: 300px;
+                                overflow-y: auto;
+                                padding-right: 8px;
+                            ">
+                                ${commandHistory.map((cmd, idx) => `
+                                    <div style="
+                                        padding: 4px 0;
+                                        display: flex;
+                                        &:hover {
+                                            background: rgba(79,195,247,0.05);
+                                        }
+                                    ">
+                                        <div style="
+                                            color: #a0a8c0;
+                                            min-width: 24px;
+                                            margin-right: 8px;
+                                        ">${idx + 1}.</div>
+                                        <div style="color: #ffffff;">${cmd}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+
+                            <div style="
+                                margin-top: 0.8em;
+                                font-size: 0.85em;
+                                color: #607d8b;
+                                font-style: italic;
+                                text-align: right;
+                            ">
+                                ${commandHistory.length} command${commandHistory.length !== 1 ? 's' : ''} in history
+                            </div>
+                        </div>
                     </div>
                 `, 'html');
             }
