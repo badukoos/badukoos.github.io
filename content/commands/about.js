@@ -2,16 +2,42 @@ export default {
     execute: (terminal) => {
         const skills = [
             {
-                name: "My skills include but are not limited to",
+                name: "Key Skills",
                 details: [
-                    "Database Performance Optimization",
-                    "Automation & Infrastructure as Code (IaC)",
-                    "Containerization",
-                    "Cloud Infrastructure Management",
-                    "SQL Server Administration",
-                    "Security & Compliance",
-                    "Standardization & Scalability",
-                    "Collaboration & Knowledge Sharing"
+                    "<strong>Reliability & Performance Engineering</strong>",
+                    "• Database performance tuning: Refactoring queries, index optimization",
+                    "• High availability and disaster recovery on AWS (EC2 and RDS)",
+                    "• Query diagnostics using Query Store, DMVs, and Extended Events",
+                    "",
+                    "<strong>Automation & Infrastructure as Code</strong>",
+                    "• Infrastructure automation with Ansible and Terraform",
+                    "• CI/CD pipeline integration with Jenkins",
+                    "• Automated provisioning and rollback of environments",
+                    "",
+                    "<strong>Monitoring & Incident Response</strong>",
+                    "• Observability tools: New Relic, Datadog, SQL Sentry",
+                    "• Custom dashboards and alerts (NRQL, custom alerting strategies)",
+                    "• Incident response and postmortems with PagerDuty and Blameless",
+                    "",
+                    "<strong>Containerization & Testing</strong>",
+                    "• Database containerized with Docker for isolated testing",
+                    "• Automated test environments and rollback pipelines",
+                    "• Version-controlled database deployments",
+                    "",
+                    "<strong>Cloud Infrastructure & Cost Management</strong>",
+                    "• AWS resource optimization (EC2, RDS, S3, Aurora)",
+                    "• Cost tracking and analysis using AWS Cost Explorer",
+                    "• Resource tagging and rightsizing for budget control",
+                    "",
+                    "<strong>Security & Abuse Detection</strong>",
+                    "• Threat detection and response using Splunk",
+                    "• Worked with SOC teams to investigate and reduce incidents",
+                    "• Developed automated alerting and anomaly detection systems",
+                    "",
+                    "<strong>Collaboration & Documentation</strong>",
+                    "• Partnered with Dev, Ops, QA, and Security teams",
+                    "• Authored technical documentation and onboarding materials",
+                    "• Created recovery playbooks and automation workflows"
                 ],
                 accentColor: "#82b1ff"
             }
@@ -31,31 +57,72 @@ export default {
         const strengths = {
             name: "Key Strengths",
             items: [
-                "Technical expertise",
-                "Strong problem-solving skills",
-                "Effective communication",
-                "Adaptability",
-                "Team player"
+                "Deep Technical Proficiency",
+                "Analytical Problem Solver",
+                "Clear, Impactful Communicator",
+                "Operational Mindset with Agility",
+                "Collaborative and Reliable Team Member"
             ],
             accentColor: "#ff8a65"  // Coral color
         };
 
-        // Clean Summary section (no colors)
+        const summary = {
+            name: "Summary",
+            items: [
+                "Database/Site Reliability Engineer with expertise in database optimization, infrastructure automation, and incident response. Proven ability to enhance system reliability, streamline deployments, and reduce operational overhead. Skilled in AWS infrastructure, Docker-based environments, and Infrastructure as Code with Ansible and Terraform. Strong collaborator with experience in security incident mitigation and creating clear, actionable documentation"
+            ],
+            accentColor: "#4a90e2"
+        };
+
         terminal.addOutput(`
             <div style="
                 margin-bottom: 2em;
-                line-height: 1.6;
-                color: #e0e0e0;
                 background: rgba(30, 30, 30, 0.5);
                 border-radius: 8px;
                 padding: 1.2em;
-                border-left: 4px solid #4a90e2;
+                border-left: 4px solid ${summary.accentColor};
                 box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             ">
-                With 10 years in database and site reliability engineering,
-                I build scalable, resilient systems across diverse domains.
-                I thrive on solving complex challenges in high-demand environments
-                with a hands-on, adaptive approach.
+                <div style="
+                    font-size: 1.1em;
+                    font-weight: bold;
+                    color: ${summary.accentColor};
+                    margin-bottom: 0.8em;
+                    display: flex;
+                    align-items: center;
+                ">
+                    <span style="
+                        display: inline-block;
+                        width: 12px;
+                        height: 12px;
+                        background: ${summary.accentColor};
+                        border-radius: 50%;
+                        margin-right: 10px;
+                    "></span>
+                    ${summary.name}
+                </div>
+
+                <ul style="
+                    list-style: none;
+                    padding-left: 0;
+                    margin: 0;
+                ">
+                    ${summary.items.map(item => `
+                        <li style="
+                            margin-bottom: 0.6em;
+                            padding-left: 1.5em;
+                            position: relative;
+                            line-height: 1.5;
+                        ">
+                            <span style="
+                                position: absolute;
+                                left: 0;
+                                color: ${summary.accentColor};
+                            ">▹</span>
+                            ${item}
+                        </li>
+                    `).join('')}
+                </ul>
             </div>
         `, 'html');
 
@@ -88,27 +155,19 @@ export default {
                     ${skills[0].name}
                 </div>
 
-                <ul style="
-                    list-style: none;
-                    padding-left: 0;
-                    margin: 0;
+                <div style="
+                    line-height: 1.6;
+                    color: #e0e0e0;
                 ">
                     ${skills[0].details.map(d => `
-                        <li style="
-                            margin-bottom: 0.6em;
-                            padding-left: 1.5em;
-                            position: relative;
-                            line-height: 1.5;
+                        <div style="
+                            margin-bottom: ${d === '' ? '0.8em' : '0.4em'};
+                            ${d.startsWith('<strong>') ? 'margin-top: 0.8em;' : ''}
                         ">
-                            <span style="
-                                position: absolute;
-                                left: 0;
-                                color: ${skills[0].accentColor};
-                            ">▹</span>
                             ${d}
-                        </li>
+                        </div>
                     `).join('')}
-                </ul>
+                </div>
             </div>
         `, 'html');
 
