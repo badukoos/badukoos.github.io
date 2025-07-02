@@ -26,14 +26,14 @@ export default {
                     background: rgba(30, 30, 30, 0.5);
                     border-radius: 8px;
                     padding: 1em;
-                    border-left: 4px solid #4a90e2;
+                    border-left: 4px solid #4fc3f7;
                     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
                     display: grid;
                     grid-template-columns: 120px 1fr;
                     gap: 1em;
                     align-items: center;
                 ">
-                    <div style="font-weight: bold; color: #4a90e2;">
+                    <div style="font-weight: bold; color: #4fc3f7;">
                         ${cmd.name}
                     </div>
                     <div style="color: #e0e0e0;">

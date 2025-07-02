@@ -39,7 +39,7 @@ export default {
                     "• Authored technical documentation and onboarding materials",
                     "• Created recovery playbooks and automation workflows"
                 ],
-                accentColor: "#82b1ff"
+                accentColor: "#4fc3f7"
             }
         ];
 
@@ -71,9 +71,10 @@ export default {
             items: [
                 "Database/Site Reliability Engineer with expertise in database optimization, infrastructure automation, and incident response. Proven ability to enhance system reliability, streamline deployments, and reduce operational overhead. Skilled in AWS infrastructure, Docker-based environments, and Infrastructure as Code with Ansible and Terraform. Strong collaborator with experience in security incident mitigation and creating clear, actionable documentation"
             ],
-            accentColor: "#4a90e2"
+            accentColor: "#4fc3f7"
         };
 
+        // Summary section
         terminal.addOutput(`
             <div style="
                 margin-bottom: 2em;

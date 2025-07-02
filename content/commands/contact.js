@@ -6,7 +6,7 @@ export default {
                 border-radius: 8px;
                 padding: 1.2em;
                 margin-bottom: 1em;
-                border-left: 4px solid #4a90e2;
+                border-left: 4px solid #4fc3f7;
                 box-shadow: 0 2px 8px rgba(0,0,0,0.1);
                 position: relative;
                 overflow: hidden;
@@ -28,7 +28,7 @@ export default {
                     <div style="
                         font-size: 1.1em;
                         font-weight: bold;
-                        color: #4a90e2;
+                        color: #4fc3f7;
                         margin-bottom: 0.8em;
                         display: flex;
                         align-items: center;
@@ -37,7 +37,7 @@ export default {
                             display: inline-block;
                             width: 12px;
                             height: 12px;
-                            background: #4a90e2;
+                            background: #4fc3f7;
                             border-radius: 50%;
                             margin-right: 10px;
                         "></span>
@@ -52,7 +52,7 @@ export default {
                     ">
                         <div style="color: #a0a8c0; font-weight: 500;">Email:</div>
                         <div style="color: #ffffff;">
-                            <a href="mailto:agopinath@protonmail.com" style="color: #4a90e2; text-decoration: none; transition: all 0.2s;">
+                            <a href="mailto:agopinath@protonmail.com" style="color: #4fc3f7; text-decoration: none; transition: all 0.2s;">
                                 agopinath@protonmail.com
                                 <span style="margin-left: 5px; font-size: 0.8em;">↗</span>
                             </a>
@@ -60,7 +60,7 @@ export default {
 
                         <div style="color: #a0a8c0; font-weight: 500;">GitHub:</div>
                         <div style="color: #ffffff;">
-                            <a href="https://github.com/badukoos" target="_blank" style="color: #4a90e2; text-decoration: none; transition: all 0.2s;">
+                            <a href="https://github.com/badukoos" target="_blank" style="color: #4fc3f7; text-decoration: none; transition: all 0.2s;">
                                 github.com/badukoos
                                 <span style="margin-left: 5px; font-size: 0.8em;">↗</span>
                             </a>
