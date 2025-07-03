@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         // Initial message
         terminal.addOutput("Welcome to my terminal portfolio!", 'output');
-        terminal.addOutput("Type 'help' and ↩ to see available commands.", 'output');
+        terminal.addOutput("Type help and ↩ to see available commands.", 'output');
 
         commandInput.addEventListener('keydown', function(e) {
             if (e.key === 'Enter') {

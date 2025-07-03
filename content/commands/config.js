@@ -1,4 +1,3 @@
 export default {
-  autoClear: false,
-  maxHistory: 50
+  autoClear: false
 };

@@ -5,6 +5,7 @@ export default {
             { name: "projects", description: "View my featured projects" },
             { name: "contact", description: "Get my contact information" },
             { name: "clear", description: "Clear the terminal screen" },
+            { name: "config", description: "Display current terminal config" },
             { name: "help", description: "Display this help message" }
         ];
 
