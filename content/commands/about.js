@@ -1,47 +1,67 @@
 export default {
     execute: (terminal) => {
-        const skills = [
-            {
-                name: "Key Skills",
-                details: [
-                    "<strong>Reliability & Performance Engineering</strong>",
-                    "• Database performance tuning: Refactoring queries, index optimization",
-                    "• High availability and disaster recovery on AWS (EC2 and RDS)",
-                    "• Query diagnostics using Query Store, DMVs, and Extended Events",
-                    "",
-                    "<strong>Automation & Infrastructure as Code</strong>",
-                    "• Infrastructure automation with Ansible and Terraform",
-                    "• CI/CD pipeline integration with Jenkins",
-                    "• Automated provisioning and rollback of environments",
-                    "",
-                    "<strong>Monitoring & Incident Response</strong>",
-                    "• Observability tools: New Relic, Datadog, SQL Sentry",
-                    "• Custom dashboards and alerts (NRQL, custom alerting strategies)",
-                    "• Incident response and postmortems with PagerDuty and Blameless",
-                    "",
-                    "<strong>Containerization & Testing</strong>",
-                    "• Database containerized with Docker for isolated testing",
-                    "• Automated test environments and rollback pipelines",
-                    "• Version-controlled database deployments",
-                    "",
-                    "<strong>Cloud Infrastructure & Cost Management</strong>",
-                    "• AWS resource optimization (EC2, RDS, S3, Aurora)",
-                    "• Cost tracking and analysis using AWS Cost Explorer",
-                    "• Resource tagging and rightsizing for budget control",
-                    "",
-                    "<strong>Security & Abuse Detection</strong>",
-                    "• Threat detection and response using Splunk",
-                    "• Worked with SOC teams to investigate and reduce incidents",
-                    "• Developed automated alerting and anomaly detection systems",
-                    "",
-                    "<strong>Collaboration & Documentation</strong>",
-                    "• Partnered with Dev, Ops, QA, and Security teams",
-                    "• Authored technical documentation and onboarding materials",
-                    "• Created recovery playbooks and automation workflows"
-                ],
-                accentColor: "#4fc3f7"
-            }
-        ];
+        const skills = {
+            name: "Key Skills",
+            categories: [
+                {
+                    name: "Reliability & Performance Engineering",
+                    items: [
+                        "Database performance tuning: Refactoring queries, index optimization",
+                        "High availability and disaster recovery on AWS (EC2 and RDS)",
+                        "Query diagnostics using Query Store, DMVs, and Extended Events"
+                    ]
+                },
+                {
+                    name: "Automation & Infrastructure as Code",
+                    items: [
+                        "Infrastructure automation with Ansible and Terraform",
+                        "CI/CD pipeline integration with Jenkins",
+                        "Automated provisioning and rollback of environments"
+                    ]
+                },
+                {
+                    name: "Monitoring & Incident Response",
+                    items: [
+                        "Observability tools: New Relic, Datadog, SQL Sentry",
+                        "Custom dashboards and alerts (NRQL, custom alerting strategies)",
+                        "Incident response and postmortems with PagerDuty and Blameless"
+                    ]
+                },
+                {
+                    name: "Containerization & Testing",
+                    items: [
+                        "Database containerized with Docker for isolated testing",
+                        "Automated test environments and rollback pipelines",
+                        "Version-controlled database deployments"
+                    ]
+                },
+                {
+                    name: "Cloud Infrastructure & Cost Management",
+                    items: [
+                        "AWS resource optimization (EC2, RDS, S3, Aurora)",
+                        "Cost tracking and analysis using AWS Cost Explorer",
+                        "Resource tagging and rightsizing for budget control"
+                    ]
+                },
+                {
+                    name: "Security & Abuse Detection",
+                    items: [
+                        "Threat detection and response using Splunk",
+                        "Worked with SOC teams to investigate and reduce incidents",
+                        "Developed automated alerting and anomaly detection systems"
+                    ]
+                },
+                {
+                    name: "Collaboration & Documentation",
+                    items: [
+                        "Partnered with Dev, Ops, QA, and Security teams",
+                        "Authored technical documentation and onboarding materials",
+                        "Created recovery playbooks and automation workflows"
+                    ]
+                }
+            ],
+            accentColor: "#4fc3f7"
+        };
 
         const tools = {
             name: "Tools & Technologies",
@@ -57,11 +77,11 @@ export default {
         const strengths = {
             name: "Key Strengths",
             items: [
-                "Deep Technical Proficiency",
-                "Analytical Problem Solver",
-                "Clear, Impactful Communicator",
-                "Operational Mindset with Agility",
-                "Collaborative and Reliable Team Member"
+                "Expert Technical Proficiency",
+                "Strategic Problem Solver",
+                "Impactful Communicator",
+                "Agile Operational Leader",
+                "Dedicated Team Player"
             ],
             accentColor: "#ff8a65"  // Coral color
         };
@@ -134,13 +154,13 @@ export default {
                 background: rgba(30, 30, 30, 0.5);
                 border-radius: 8px;
                 padding: 1.2em;
-                border-left: 4px solid ${skills[0].accentColor};
+                border-left: 4px solid ${skills.accentColor};
                 box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             ">
                 <div style="
                     font-size: 1.1em;
                     font-weight: bold;
-                    color: ${skills[0].accentColor};
+                    color: ${skills.accentColor};
                     margin-bottom: 0.8em;
                     display: flex;
                     align-items: center;
@@ -149,26 +169,52 @@ export default {
                         display: inline-block;
                         width: 12px;
                         height: 12px;
-                        background: ${skills[0].accentColor};
+                        background: ${skills.accentColor};
                         border-radius: 50%;
                         margin-right: 10px;
                     "></span>
-                    ${skills[0].name}
+                    ${skills.name}
                 </div>
 
-                <div style="
-                    line-height: 1.6;
-                    color: #e0e0e0;
+                <ul style="
+                    list-style: none;
+                    padding-left: 0;
+                    margin: 0;
                 ">
-                    ${skills[0].details.map(d => `
-                        <div style="
-                            margin-bottom: ${d === '' ? '0.8em' : '0.4em'};
-                            ${d.startsWith('<strong>') ? 'margin-top: 0.8em;' : ''}
-                        ">
-                            ${d}
-                        </div>
+                    ${skills.categories.map(category => `
+                        <li style="margin-bottom: 1em;">
+                            <div style="
+                                font-weight: bold;
+                                color: ${skills.accentColor};
+                                margin-bottom: 0.4em;
+                            ">
+                                ${category.name}
+                            </div>
+                            <ul style="
+                                list-style: none;
+                                padding-left: 1em;
+                                margin: 0;
+                            ">
+                                ${category.items.map(item => `
+                                    <li style="
+                                        margin-bottom: 0.3em;
+                                        padding-left: 1.5em;
+                                        position: relative;
+                                        line-height: 1.5;
+                                        color: #e0e0e0;
+                                    ">
+                                        <span style="
+                                            position: absolute;
+                                            left: 0;
+                                            color: ${skills.accentColor};
+                                        ">▹</span>
+                                        ${item}
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </li>
                     `).join('')}
-                </div>
+                </ul>
             </div>
         `, 'html');
 
