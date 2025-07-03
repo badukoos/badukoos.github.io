@@ -41,12 +41,22 @@ export default {
             <div style="
                 font-size: 1.3em;
                 font-weight: bold;
-                color: #ffffff;
+                color: #4fc3f7;
                 margin-bottom: 1em;
                 padding-bottom: 0.5em;
                 border-bottom: 2px solid #424242;
                 letter-spacing: 1px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
             ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    background: #4fc3f7;
+                    border-radius: 50%;
+                "></span>
                 Featured Projects
             </div>
         `, 'html');
